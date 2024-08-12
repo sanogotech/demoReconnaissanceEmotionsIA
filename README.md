@@ -37,6 +37,35 @@ pip install fer
 pip install matplotlib  # Pour la visualisation des résultats
 ```
 
+Pour assurer que toutes les dépendances nécessaires à votre projet de reconnaissance des émotions en temps réel avec Python, OpenCV, et FER sont installées, voici un exemple de contenu pour un fichier `requirements.txt` :
+
+```plaintext
+opencv-python==4.8.0.74
+fer==22.4.0
+matplotlib==3.7.2
+tensorflow==2.13.0
+mtcnn==0.1.1
+numpy==1.25.0
+```
+
+### **Explication des Packages :**
+
+1. **`opencv-python`** : Bibliothèque principale pour le traitement d'images et l'accès à la webcam.
+2. **`fer`** : Bibliothèque utilisée pour la reconnaissance des émotions à partir des expressions faciales.
+3. **`matplotlib`** : Utilisée pour la visualisation des résultats sous forme de graphiques.
+4. **`tensorflow`** : Nécessaire pour le backend de certaines opérations, notamment pour la détection de visages dans `fer`.
+5. **`mtcnn`** : Utilisé par `fer` pour une détection précise des visages.
+6. **`numpy`** : Pour les opérations mathématiques et de manipulation de matrices, très utile dans le traitement d'images.
+
+### **Installation des Dépendances :**
+
+Vous pouvez installer toutes ces dépendances en utilisant la commande suivante dans le terminal, une fois que vous avez créé votre fichier `requirements.txt` :
+
+```bash
+pip install -r requirements.txt
+```
+
+Cela garantit que toutes les bibliothèques requises sont installées avec les versions correctes pour exécuter votre projet sans problèmes de compatibilité.
 ### **2. Importer les Bibliothèques Nécessaires**
 
 ```python
