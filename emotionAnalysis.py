@@ -4,6 +4,11 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+# Acceder à la Webcam Camera
+cap = cv2.VideoCapture(0)
+
+# 
 # Stocker les émotions détectées
 emotion_log = []
 
