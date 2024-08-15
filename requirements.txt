@@ -1,4 +1,4 @@
-inimum Python version required: 3.7
+# Minimum Python version required: 3.7
 opencv-python==4.8.0.74
 fer==22.4.0
 matplotlib==3.5.3
