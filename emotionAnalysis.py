@@ -8,7 +8,9 @@ import matplotlib.pyplot as plt
 # Acceder à la Webcam Camera
 cap = cv2.VideoCapture(0)
 
-# 
+# Initialiser le detecteur des emotions FER
+emotion_detector = FER(mtcnn=True)  # MTCNN pour une meilleure précision
+
 # Stocker les émotions détectées
 emotion_log = []
 
