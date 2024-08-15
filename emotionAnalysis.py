@@ -1,3 +1,9 @@
+import cv2
+from fer import FER
+import time
+import numpy as np
+import matplotlib.pyplot as plt
+
 # Stocker les émotions détectées
 emotion_log = []
 
