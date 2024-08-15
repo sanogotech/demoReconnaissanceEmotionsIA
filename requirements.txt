@@ -4,5 +4,6 @@ fer==22.4.0
 matplotlib==3.5.3
 tensorflow==2.6.0
 mtcnn==0.1.1
-numpy==1.19.5
+numpy > 1.2
+pip install numpy>=1.20
 
