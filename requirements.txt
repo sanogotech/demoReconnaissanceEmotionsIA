@@ -1,8 +1,9 @@
 # Minimum Python version required: 3.7
-opencv-python==4.8.0.74
+opencv-python==4.5.3.56
 fer==22.4.0
-matplotlib==3.5.3
+matplotlib==3.4.3
 tensorflow==2.6.0
 mtcnn==0.1.1
-numpy > 1.2
+numpy==1.19.5
+
 
