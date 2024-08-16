@@ -14,10 +14,11 @@ if not cap.isOpened():
 
 # Initialiser le détecteur des émotions FER
 try:
+    from facenet_pytorch import MTCNN
     emotion_detector = FER(mtcnn=True)  # MTCNN pour une meilleure précision
-except Exception as e:
-    print(f"Erreur lors de l'initialisation du détecteur d'émotions: {e}")
-    exit()
+except ImportError:
+    print("MTCNN non installé, utilisation du détecteur de base.")
+    emotion_detector = FER(mtcnn=False)  # Utilisation du détecteur FER sans MTCNN
 
 # Stocker les émotions détectées
 emotion_log = []
