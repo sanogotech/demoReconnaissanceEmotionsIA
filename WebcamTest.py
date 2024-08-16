@@ -22,6 +22,10 @@ def main():
                 print("Échec de la capture de la trame.")
                 break
 
+            # Afficher des informations sur la trame capturée
+            height, width, channels = frame.shape
+            print(f"Dimensions de la trame: {width}x{height}, Canaux: {channels}")
+
             # Afficher la trame capturée
             cv2.imshow('Test Webcam', frame)
 
