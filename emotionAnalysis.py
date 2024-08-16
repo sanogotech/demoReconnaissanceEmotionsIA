@@ -4,12 +4,20 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-# Acceder à la Webcam Camera
+# Accéder à la Webcam
 cap = cv2.VideoCapture(0)
 
-# Initialiser le detecteur des emotions FER
-emotion_detector = FER(mtcnn=True)  # MTCNN pour une meilleure précision
+# Vérification si la webcam est accessible
+if not cap.isOpened():
+    print("Erreur: Impossible d'accéder à la webcam.")
+    exit()
+
+# Initialiser le détecteur des émotions FER
+try:
+    emotion_detector = FER(mtcnn=True)  # MTCNN pour une meilleure précision
+except Exception as e:
+    print(f"Erreur lors de l'initialisation du détecteur d'émotions: {e}")
+    exit()
 
 # Stocker les émotions détectées
 emotion_log = []
