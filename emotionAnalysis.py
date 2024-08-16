@@ -5,7 +5,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Accéder à la Webcam
-cap = cv2.VideoCapture(0)
+# cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+
 
 # Vérification si la webcam est accessible
 if not cap.isOpened():
