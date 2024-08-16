@@ -1,21 +1,43 @@
 import cv2
+import sys
 
-cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)  # Essayez avec et sans CAP_DSHOW pour voir ce qui fonctionne.
+def main():
+    # Initialiser la capture vidéo avec la webcam
+    cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)  # Essayez avec et sans CAP_DSHOW pour voir ce qui fonctionne.
 
-if not cap.isOpened():
-    print("Erreur: Impossible d'accéder à la webcam.")
-    exit()
+    # Vérifier si la webcam est correctement ouverte
+    if not cap.isOpened():
+        print("Erreur : Impossible d'accéder à la webcam.")
+        sys.exit()
 
-while True:
-    ret, frame = cap.read()
-    if not ret:
-        print("Échec de la capture de la trame")
-        break
+    print("La webcam est ouverte. Appuyez sur 'q' pour quitter.")
 
-    cv2.imshow('Test Webcam', frame)
+    try:
+        while True:
+            # Lire une trame depuis la webcam
+            ret, frame = cap.read()
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+            # Vérifier si la capture de la trame a réussi
+            if not ret:
+                print("Échec de la capture de la trame.")
+                break
 
-cap.release()
-cv2.destroyAllWindows()
+            # Afficher la trame capturée
+            cv2.imshow('Test Webcam', frame)
+
+            # Quitter si la touche 'q' est pressée
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                print("Quitter l'application.")
+                break
+
+    except KeyboardInterrupt:
+        print("Interruption du programme par l'utilisateur.")
+
+    finally:
+        # Libérer la capture vidéo et fermer les fenêtres
+        cap.release()
+        cv2.destroyAllWindows()
+        print("Capture vidéo terminée et fenêtres fermées.")
+
+if __name__ == "__main__":
+    main()
